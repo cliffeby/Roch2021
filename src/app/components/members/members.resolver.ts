@@ -1,9 +1,5 @@
 import { Injectable } from '@angular/core';
-import {
-  Router, Resolve,
-  RouterStateSnapshot,
-  ActivatedRouteSnapshot
-} from '@angular/router';
+import { Router, RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
 import { EMPTY, Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Member } from 'src/app/models/member';
@@ -12,7 +8,7 @@ import { MembersService } from 'src/app/services/members.service';
 @Injectable({
   providedIn: 'root'
 })
-export class MembersResolver implements Resolve<Member[]> {
+export class MembersResolver  {
   constructor(private _membersService: MembersService, private router : Router) { }
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Member[]> {
     return this._membersService.getMembers().pipe(

@@ -3,6 +3,7 @@ import jwksRsa from "jwks-rsa";
 import * as dotenv from "dotenv";
 
 dotenv.config();
+console.log('dotenv', process.env.AUTH0_DOMAIN,process.env.AUTH0_AUDIENCE)
 
 export const checkJwt = jwt({
   secret: jwksRsa.expressJwtSecret({

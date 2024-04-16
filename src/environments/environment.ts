@@ -5,11 +5,11 @@ export const environment = {
   auth: {
     domain: info.domain,
     clientId: info.clientId,
-    audience: info.audience,
+    audience: info.authorizationParams.audience,
     redirectUri: window.location.origin,
   },
   dev: {
-    apiUrl: info.apiUrl
+    apiUrl: info.apiUri
   }
 };
 
